@@ -1,0 +1,30 @@
+﻿<Window x:Class="ReaderApplication.UserSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReaderApplication"
+        mc:Ignorable="d"
+        Title="Settings" Height="450" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="361" Margin="10,10,0,0" VerticalAlignment="Top" Width="205">
+            <Label Content="Voices" FontWeight="Bold" FontSize="18"/>
+        </Border>
+        <Label Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,97,0,0" RenderTransformOrigin="1.278,0.601" Height="26" Width="36"/>
+        <Label Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.597,3.843" Margin="128,97,0,0" Height="26" Width="48"/>
+        <RadioButton GroupName="VoiceTypeButton" Content="Male 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,128,0,0" Checked="RadioButton_Checked_Male_1" Height="15" Width="55"/>
+        <RadioButton GroupName="VoiceTypeButton" Content="Male 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,151,0,0" RenderTransformOrigin="0.49,1.256" Checked="RadioButton_Checked_Male_2" Height="15" Width="55"/>
+        <RadioButton GroupName="VoiceTypeButton" Content="Female 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="128,128,0,0" Checked="RadioButton_Checked_Female_1" Height="15" Width="67"/>
+        <RadioButton GroupName="VoiceTypeButton" Content="Female 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="128,151,0,0" Checked="RadioButton_Checked_Female_2" Height="15" Width="67"/>
+        <Slider x:Name="ReadingSpeedSlider" Value="5"  Maximum="10" Minimum="1" TickFrequency="1" IsSnapToTickEnabled="True"  HorizontalAlignment="Left" Margin="242,68,0,0" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.493,-1.44" Height="18"/>
+        <Label Content="Reading Speed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,17,0,0" FontSize="18" FontWeight="Bold" Height="34" Width="136"/>
+        <TextBox Text="{Binding ElementName=ReadingSpeedSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"  x:Name="ReadingSpeedTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="20" Margin="497,63,0,0"/>
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="473,356,0,0" Click="SaveButton_Click" Height="20"/>
+
+    </Grid>
+</Window>
